@@ -32,6 +32,9 @@ to make improvements.
   * Part A: Stack & Queue **(Week 8)**
   * Part B: Final Turn-in
 
+# Class Resources:
+* [Python vs. C++](https://github.com/Moosader/Python-vs-CPP)
+
 # Additional Resources:
 
 * [Sorting and Searching Algorithms: A Cookbook](http://www.cs.auckland.ac.nz/~jmor159/PLDS210/niemann/s_man.htm)

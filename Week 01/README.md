@@ -7,8 +7,8 @@ source control, and beginning the transition from Python to C++.
 
 ### Class Notes
 
-* [Download notes on IDE & Source Control]()
-* [Download notes on Python vs. C++]()
+* [Download notes on IDE & Source Control](https://github.com/Moosader/Problem-Solving-and-Programming-II/blob/master/Week%2001/Setup%20-%20IDE%20and%20Source%20Control.odt)
+* [Download notes on Python vs. C++](https://github.com/Moosader/Python-vs-CPP)
 
 ### Class Video
 
@@ -16,8 +16,7 @@ source control, and beginning the transition from Python to C++.
 
 ### Sample Code
 
-* [Python vs. C++ Examples](https://github.com/Moosader/Python-vs-CPP) are for you
-to compare what Python commands look like vs. C++. (Input/Ouptut, If Statements, etc.)
+
 
 ### Book
 
@@ -31,6 +30,6 @@ would like feedback.
 
 ## Master
 
-Assignment for this week: link
+Assignment for this week: [Assignment 1-A](https://github.com/Moosader/Problem-Solving-and-Programming-II/tree/master/Assignments/Assignment%201-A)
 
-Due MONDAY, JULY 17th at 11:59 PM.
+Due **Wednesday, June 19th** at 11:59 pm
