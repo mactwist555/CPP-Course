@@ -37,20 +37,21 @@ int main()
 		cout << "\t No" << endl;
 	}
 
-	cout << endl << "ADDITION" << endl;
 	Fraction sum = frac1.Add( frac2 );
+	Fraction difference = frac1.Subtract( frac2 );
+	Fraction product = frac1.Multiply( frac2 );
+	Fraction quotient = frac1.Divide( frac2 );
+
+	cout << endl << "ADDITION: \t";
 	sum.Output();
 
-	cout << endl << "SUBTRACTION" << endl;
-	Fraction difference = frac1.Subtract( frac2 );
+	cout << endl << "SUBTRACTION: \t";
 	difference.Output();
 
-	cout << endl << "MULTIPLICATION" << endl;
-	Fraction product = frac1.Multiply( frac2 );
+	cout << endl << "MULTIPLICATION: \t";
 	product.Output();
 
-	cout << endl << "DIVISION" << endl;
-	Fraction quotient = frac1.Divide( frac2 );
+	cout << endl << "DIVISION: \t";
 	quotient.Output();
 
 	return 0;

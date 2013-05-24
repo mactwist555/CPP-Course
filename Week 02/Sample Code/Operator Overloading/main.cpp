@@ -26,20 +26,21 @@ int main()
 		cout << "\t No" << endl;
 	}
 
-	cout << endl << "ADDITION \t";
 	Fraction sum = frac1 + frac2;
+	Fraction difference = frac1 - frac2;
+	Fraction product = frac1 * frac2;
+	Fraction quotient = frac1 / frac2;
+
+	cout << endl << "ADDITION \t";
 	cout << sum << endl;
 
 	cout << endl << "SUBTRACTION \t";
-	Fraction difference = frac1 - frac2;
 	cout << difference << endl;
 
 	cout << endl << "MULTIPLICATION \t";
-	Fraction product = frac1 * frac2;
 	cout << product << endl;
 
 	cout << endl << "DIVISION \t";
-	Fraction quotient = frac1 / frac2;
 	cout << quotient << endl;
 
 	return 0;

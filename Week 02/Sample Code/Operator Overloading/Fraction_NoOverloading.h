@@ -7,15 +7,14 @@ class Fraction
 	Fraction();
 	Fraction( int num, int denom );
 
-	void Setup( int num, int denom );
-
-	bool IsEqual( Fraction frac2 );
-
-	void Output();
-
 	int GetDenominator();
 	int GetNumerator();
 	int GetCommonDenominator( Fraction frac2 );
+
+	void Output();
+	void Setup( int num, int denom );
+
+	bool IsEqual( Fraction frac2 );
 
 	Fraction Add( Fraction frac2 );
 	Fraction Subtract( Fraction frac2 );
