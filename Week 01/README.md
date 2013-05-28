@@ -16,20 +16,24 @@ source control, and beginning the transition from Python to C++.
 
 ### Sample Code
 
-
+* Mad Lib - Input/Output, Variables
+* Plus - Input/Output, For Loop
+* Bank - Input/Output, While Loop, If Statements
+* Map Walker - Arrays, While Loops, If Statements
+* Read From File - File input, While Loop, For Loop
+* Output To File - File Output, Struct, While Loop, If Statements, For Loop
+* Output HTML File - File Output, Functions, While Loop
 
 ### Book
 
-Read Chapter ...
+* Chapter 1: C++ Basics
+* Chapter 2: Flow of Control
 
-## Practice
+## In-Class Practice
 
-These are optional practice assignments for you to do to become more acquainted
-with the topic.  These are *not graded*, but you can turn it in to me if you
-would like feedback.
 
-## Master
+## Weekly Assignment
 
 Assignment for this week: [Assignment 1-A](https://github.com/Moosader/Problem-Solving-and-Programming-II/tree/master/Assignments/Assignment%201-A)
 
-Due **Wednesday, June 19th** at 11:59 pm
+**Due: TBD**
