@@ -2,7 +2,7 @@
 #include <stdlib.h>
 using namespace std;
 
-void AdjustForInflation( float prices[], int size );
+void AdjustForInflation( const float prices[], int size );
 void PrintAllPrices( float prices[], int size );
 
 int main()
@@ -26,7 +26,7 @@ int main()
 	return 0;
 }
 
-void AdjustForInflation( float prices[], int size )
+void AdjustForInflation( const float prices[], int size )
 {
 	for ( int i = 0; i < size; i++ )
 	{

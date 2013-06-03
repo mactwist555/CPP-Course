@@ -1,6 +1,8 @@
 bin/
 main/
 
+__pycache__/
+
 # Compiled Object files
 *.slo
 *.lo
@@ -18,3 +20,9 @@ main/
 *.cbp
 *.depend
 *.layout
+
+.odp#
+main
+.directory
+.~lock*
+
