@@ -1,7 +1,4 @@
-CS 201R: Problem-Solving-and-Programming-II
-==================================
-
-# CS 201R
+## CS 201R: Problem Solving and Programming II
 
 CS201R
 
