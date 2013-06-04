@@ -34,6 +34,6 @@ source control, and beginning the transition from Python to C++.
 
 ## Weekly Assignment
 
-Assignment for this week: [Assignment 1-A](https://github.com/Moosader/Problem-Solving-and-Programming-II/tree/master/Assignments/Assignment%201-A)
+Assignment for this week: [Assignment 1](https://github.com/Moosader/Problem-Solving-and-Programming-II/tree/master/Assignments)
 
-**Due: TBD**
+**Due: June 20th at 11:59 pm**
