@@ -1,13 +1,19 @@
-CS 201: Problem-Solving-and-Programming-II
+CS 201R: Problem-Solving-and-Programming-II
 ==================================
 
-# CS 201
+# CS 201R
 
-## Syllabus
+CS201R
 
-## Schedule
+Class Time: Tuesday/Thursdays 1:00 pm – 3:45 pm
 
-## Assignments
+Building: Education Building room 261
+
+## [Syllabus](https://github.com/Moosader/Problem-Solving-and-Programming-II/blob/master/Syllabus.odt?raw=true)
+
+## [Schedule](https://github.com/Moosader/Problem-Solving-and-Programming-II/blob/master/Schedule.ods?raw=true)
+
+## [Assignments](https://github.com/Moosader/Problem-Solving-and-Programming-II/tree/master/Assignments)
 
 # Class Resources:
 * [Python vs. C++](https://github.com/Moosader/Python-vs-CPP)
@@ -16,6 +22,7 @@ CS 201: Problem-Solving-and-Programming-II
 # Additional Resources:
 
 ## C++ Basics
+* [LearnCPP.com](http://www.learncpp.com/)
 * [CPlusPlus.com Tutorials](http://www.cplusplus.com/doc/tutorial/)
 * [ntu.edu.sg C++ Programming Language](http://www.ntu.edu.sg/home/ehchua/programming/cpp/cp1_Basics.html)
 * [AntiRTFM Video Tutorials](http://www.youtube.com/antirtfm)
