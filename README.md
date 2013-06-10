@@ -4,7 +4,7 @@ CS201R
 
 Class Time: Tuesday/Thursdays 1:00 pm – 3:45 pm
 
-Building: Education Building room 261
+Building: Flarsheim 302 **The room has moved as of 2013-06-10**
 
 ## [Syllabus](https://github.com/Moosader/Problem-Solving-and-Programming-II/blob/master/Syllabus.odt?raw=true)
 
