@@ -3,88 +3,62 @@
 using namespace std;
 
 enum Language { ENGLISH, GERMAN, ESPERANTO };
-enum ProgramText { LANGUAGE_NAME, WELCOME, ADD_NUMBERS, EXIT, NUMBER, SUM, GOODBYE };
+enum ProgramText { LANGUAGE_NAME, WELCOME, NUM_1, NUM_2, SUM, BYE };
 
-void SetupLanguage( string text[3][7] );
+void SetupLanguage( string text[3][6] );
 
 int main()
 {
-	string text[3][7];
+	string text[3][6];
 	SetupLanguage( text );
 
-	// ---------- program begin
 
-	// Display language choices
 	for ( int i = 0; i < 3; i++ )
 	{
-		cout << i << ". " << text[ i ][ LANGUAGE_NAME ] << endl;
+		cout << i << ". " << text[i][ LANGUAGE_NAME ] << endl;
 	}
 
 	int language;
-	cout << "? ";
+	cout << "Which language? ";
 	cin >> language;
 
 	cout << text[ language ][ WELCOME ] << endl;
 
-	bool done = false;
-	int choice;
-	while ( !done )
-	{
-		cout << endl << "-------------------------" << endl;
-		cout << "1. " << text[ language ][ ADD_NUMBERS ] << endl;
-		cout << "2. " << text[ language ][ EXIT ] << endl;
-		cin >> choice;
+	cout << text[ language ][ NUM_1 ] << endl;
+	int number1;
+	cin >> number1;
 
-		if ( choice == 2 )
-		{
-			done = true;
-		}
-		else if ( choice == 1 )
-		{
-			int num1, num2, sum;
-			cout << text[ language ][ NUMBER ] << " 1: ";
-			cin >> num1;
+	cout << text[ language ][ NUM_2 ];
+	int number2;
+	cin >> number2;
 
-			cout << text[ language ][ NUMBER ] << " 2: ";
-			cin >> num2;
+	int sum = number1 + number2;
+	cout << text[ language ][ SUM ] << sum << endl;
 
-			sum = num1 + num2;
-			cout << text[ language ][ SUM ] << ": " << sum << endl;
-		}
-	}
-
-	cout << text[ language ][ GOODBYE ] << endl;
+	cout << text[ language ][ BYE ] << endl;
 
 	return 0;
 }
 
-void SetupLanguage( string text[3][7] )
+void SetupLanguage( string text[3][6] )
 {
-	text[ ENGLISH ]		[ LANGUAGE_NAME ] = "English";
-	text[ ESPERANTO ]	[ LANGUAGE_NAME ] = "Esperanto";
-	text[ GERMAN ]		[ LANGUAGE_NAME ] = "Deutsch";
+	text[ ENGLISH ]		[ LANGUAGE_NAME ] = "English!";
+	text[ GERMAN ]		[ LANGUAGE_NAME ] = "German!";
+	text[ ESPERANTO ]	[ LANGUAGE_NAME ] = "Esperanto!";
 
-	text[ ENGLISH ]		[ WELCOME ] = "Welcome!";
-	text[ ESPERANTO ]	[ WELCOME ] = "Bonvolu!";
-	text[ GERMAN ]		[ WELCOME ] = "Herzlich Willkommen!";
+	text[ ENGLISH ]		[ NUM_1 ] = "Enter number 1:";
+	text[ GERMAN ]		[ NUM_1 ] = "Geben Sie die Nummer 1:";
+	text[ ESPERANTO ]	[ NUM_1 ] = "Entajpu numeron 1:";
 
-	text[ ENGLISH ]		[ ADD_NUMBERS ] = "Add numbers";
-	text[ ESPERANTO ]	[ ADD_NUMBERS ] = "Aldoni nombroj";
-	text[ GERMAN ]		[ ADD_NUMBERS ] = "Addieren von Zahlen";
+	text[ ENGLISH ]		[ NUM_2 ] = "Enter number 2:";
+	text[ GERMAN ]		[ NUM_2 ] = "Geben Sie die Nummer 2:";
+	text[ ESPERANTO ]	[ NUM_2 ] = "Entajpu numeron 2:";
 
-	text[ ENGLISH ]		[ EXIT ] = "Exit";
-	text[ ESPERANTO ]	[ EXIT ] = "Eliri!";
-	text[ GERMAN ]		[ EXIT ] = "Verlassen";
+	text[ ENGLISH ]		[ SUM ] = "Sum:";
+	text[ GERMAN ]		[ SUM ] = "Summe:";
+	text[ ESPERANTO ]	[ SUM ] = "Sumo:";
 
-	text[ ENGLISH ]		[ NUMBER ] = "Number";
-	text[ ESPERANTO ]	[ NUMBER ] = "Nombro!";
-	text[ GERMAN ]		[ NUMBER ] = "Anzahl";
-
-	text[ ENGLISH ]		[ SUM ] = "Sum";
-	text[ ESPERANTO ]	[ SUM ] = "Sumo";
-	text[ GERMAN ]		[ SUM ] = "Summe";
-
-	text[ ENGLISH ]		[ GOODBYE ] = "Goodbye!";
-	text[ ESPERANTO ]	[ GOODBYE ] = "Gxis!";
-	text[ GERMAN ]		[ GOODBYE ] = "Auf Wiedersehen!";
+	text[ ENGLISH ]		[ BYE ] = "Bye!";
+	text[ GERMAN ]		[ BYE ] = "Auf Wiedersehen!";
+	text[ ESPERANTO ]	[ BYE ] = "Gxis!";
 }
