@@ -8,7 +8,7 @@ int main()
 	cout << "Please enter a number: ";
 	cin >> myVariable;
 
-	int &myReference = myVariable;
+	int& myReference = myVariable;
 
 	cout << "Your variable: " << myVariable << endl;
 	cout << "Your reference: " << myReference << endl;
