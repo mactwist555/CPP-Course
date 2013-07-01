@@ -1,0 +1,14 @@
+Sparrow
+1
+seed, insects
+11.4 cm
+0.03 lb
+peacock
+0
+fruits, insects
+115cm
+10 lb
+ostrich
+0
+240cm
+250lb
