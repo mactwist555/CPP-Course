@@ -1,0 +1,39 @@
+NEW_MAP
+NAME
+North-West Corner
+DESCRIPTION
+There is a house here
+END_MAP
+
+NEW_MAP
+NAME
+North Corner
+DESCRIPTION
+This is a forest
+END_MAP
+
+NEW_MAP
+NAME
+North-East Corner
+DESCRIPTION
+This is a desert
+END_MAP
+
+NEW_MAP
+NAME
+South-West Corner
+DESCRIPTION
+There is a cave
+END_MAP
+
+NEW_MAP
+South Corner
+DESCRIPTION
+There is a lake
+END_MAP
+
+NEW_MAP
+South-East Corner
+DESCRIPTION
+This is a field of flowers
+END_MAP
