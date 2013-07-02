@@ -1,24 +1,52 @@
-## CS 201R: Problem Solving and Programming II
+# CS 201R: Problem Solving and Programming II
 
-CS201R
+## Class Information
 
-Class Time: Tuesday/Thursdays 1:00 pm – 3:45 pm
+CS201 R, Fall 2013
 
-Building: Flarsheim 302 **The room has moved as of 2013-06-10**
+**Class Time:** Tuesday/Thursdays 1:00 pm – 3:45 pm
 
-## [Syllabus](https://github.com/Moosader/Problem-Solving-and-Programming-II/blob/master/Syllabus.odt?raw=true)
+**Classroom:** Flarsheim 302
 
-## [Schedule](https://github.com/Moosader/Problem-Solving-and-Programming-II/blob/master/Schedule.ods?raw=true)
+**Office:** Flarsheim 450G
 
-## [Assignments](https://github.com/Moosader/Problem-Solving-and-Programming-II/tree/master/Assignments)
+**Office Hours:**
 
-# Class Resources:
-* [Python vs. C++](https://github.com/Moosader/Python-vs-CPP)
+Monday and Wednesday: 11:00 am - 1:00 pm
+
+Tuesday and Thusday: 4:00 pm - 6:00 pm
+
+## Class Resources
+
+Make sure to view the [Lecture](https://github.com/Moosader/Problem-Solving-and-Programming-II/tree/master/Lecture)
+folder on the website, as it contains:
+* The in-class handouts
+* The presentation slides from class
+* Sample code (both from in-class and extra code)
+* Review questions (Comprehensive list of questions for each section)
+
+### [Syllabus](https://github.com/Moosader/Problem-Solving-and-Programming-II/blob/master/Syllabus.odt?raw=true)
+
+### [Schedule](https://github.com/Moosader/Problem-Solving-and-Programming-II/blob/master/Schedule.ods?raw=true)
+
+### [Assignments](https://github.com/Moosader/Problem-Solving-and-Programming-II/tree/master/Assignments)
+
+### [Homework](https://github.com/Moosader/Problem-Solving-and-Programming-II/tree/master/Homework)
+
+### [Source Control help](https://github.com/Moosader/Problem-Solving-and-Programming-II/tree/master/Source%20Control)
+
+# Class Resources
 * [Pearson book notes & videos](http://wps.pearsoned.com/wps/media/access/Pearson_Default/14142/14481673/login.html)
 
-# Additional Resources:
+You can also find additional resources from Pearson on Blackboard!
 
-## C++ Basics
+# Additional Resources
+
+Sometimes concepts aren't clear after just one lecture. There are **plenty** of
+resources for you learn C++, both through the class (presentation slides, sample code),
+your textbook, and around the web!
+
+## C++ Tutorial websites
 * [LearnCPP.com](http://www.learncpp.com/)
 * [CPlusPlus.com Tutorials](http://www.cplusplus.com/doc/tutorial/)
 * [ntu.edu.sg C++ Programming Language](http://www.ntu.edu.sg/home/ehchua/programming/cpp/cp1_Basics.html)
@@ -46,6 +74,8 @@ Building: Flarsheim 302 **The room has moved as of 2013-06-10**
 * [Open Frameworks](http://www.openframeworks.cc/)
 
 ## Suggested Reading
+
+Suggested reading and listening to become a better software developer.
 
 ### Books
 * Effective C++ by Scott Meyers
