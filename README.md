@@ -8,6 +8,8 @@ CS201 R, Fall 2013
 
 **Classroom:** Flarsheim 302
 
+**Class Instructor:** Rachel J. Morris
+
 **Office:** Flarsheim 450G
 
 **Office Hours:**
@@ -15,6 +17,16 @@ CS201 R, Fall 2013
 Monday and Wednesday: 11:00 am - 1:00 pm
 
 Tuesday and Thusday: 4:00 pm - 6:00 pm
+
+## Lab Information
+
+**Lab Time:** Tuesday/Thursdays 9:30 am - 12:00 pm
+
+**Lab Instructor:** Imrul Siddique
+
+**Office:** Flarsheim 508
+
+**Lab:** Flarsheim ?
 
 ## Class Resources
 
