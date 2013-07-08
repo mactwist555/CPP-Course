@@ -25,5 +25,7 @@ int main()
 	total = dollars + (float)cents / 100;
 	cout << "This should also work: $" << total << endl;
 
+	cout << "\n\n";
+
 	return 0;
 }
