@@ -8,12 +8,28 @@ int main()
 
     myIntList.push_back( 2 );
     myIntList.push_front( 4 );
+    myIntList.push_back( 6 );
+    myIntList.push_front( 8 );
 
-    cout << myIntList[0] << endl;
-
-    for ( int i = 0; i < myIntList.size(); i++ )
+    for (
+         list<int>::iterator it = myIntList.begin();
+         it != myIntList.end();
+         it++
+         )
     {
-        cout << myIntList[i] << endl;
+        cout << *it << endl;
+    }
+
+    myIntList.sort();
+    cout << "Sorted..." << endl;
+
+    for (
+         list<int>::iterator it = myIntList.begin();
+         it != myIntList.end();
+         it++
+         )
+    {
+        cout << *it << endl;
     }
 
     myIntList.clear();
