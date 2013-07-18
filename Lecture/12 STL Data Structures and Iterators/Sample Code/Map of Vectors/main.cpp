@@ -5,6 +5,9 @@ using namespace std;
 
 int main()
 {
+	// GENERALLY, if you were thinking of writing
+	// Something similar to this, you would declare a
+	// class or struct to store as the value, not another vector.
 	map< string, vector< float > > playerAccounts;
 
 	vector< float > simpleFloat;
