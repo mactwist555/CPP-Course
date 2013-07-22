@@ -1,8 +1,3 @@
-/*
-CS 201 Summer 2013 Assignment 4: Phonebook appliccation
-Solution by Rachel J. Morris
-*/
-
 #ifndef _PHONENUMBER
 #define _PHONENUMBER
 

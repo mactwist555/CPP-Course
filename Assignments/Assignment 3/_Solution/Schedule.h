@@ -1,8 +1,3 @@
-/*
-CS 201 Summer 2013 Assignment 3: Employee/Schedule Management program
-Solution by Rachel J. Morris
-*/
-
 #ifndef _SCHEDULE
 #define _SCHEDULE
 

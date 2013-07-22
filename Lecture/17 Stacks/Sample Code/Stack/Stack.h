@@ -10,7 +10,7 @@ class Node
 {
 	public:
 	T 		m_data;
-	Node* 	m_next;
+	Node* 	m_ptrNext;
 };
 
 template <typename T>
@@ -57,7 +57,7 @@ void Stack<T>::Push( T item )
 	// Create new node
 	Node<T>* newNode = new Node<T>;
 	newNode->m_data = item;
-	newNode->m_next = NULL;
+	newNode->m_ptrNext = NULL;
 
 	if ( m_ptrBottom == NULL )
 	{
@@ -68,7 +68,7 @@ void Stack<T>::Push( T item )
 	else
 	{
 		// Add item to top of stack
-		m_ptrTop->m_next = newNode;
+		m_ptrTop->m_ptrNext = newNode;
 		m_ptrTop = newNode;
 	}
 
@@ -80,7 +80,7 @@ void Stack<T>::Pop()
 {
 	cout << "\t\tPOP" << endl;
 
-	if ( m_ptrBottom->m_next == NULL )
+	if ( m_ptrBottom->m_ptrNext == NULL )
 	{
 		// Only one item in list
 		delete m_ptrBottom;
@@ -92,12 +92,12 @@ void Stack<T>::Pop()
 		// First, we need the 2nd to top item.
 
 		Node<T>* currentNode = m_ptrBottom;
-		while ( currentNode->m_next != m_ptrTop )
+		while ( currentNode->m_ptrNext != m_ptrTop )
 		{
-			currentNode = currentNode->m_next;
+			currentNode = currentNode->m_ptrNext;
 		}
 
-		currentNode->m_next = NULL;
+		currentNode->m_ptrNext = NULL;
 		delete m_ptrTop;
 		m_ptrTop = currentNode;
 	}
