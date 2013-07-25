@@ -5,13 +5,7 @@
 #include <cassert>
 using namespace std;
 
-template <typename T>
-class Node
-{
-	public:
-	T 		m_data;
-	Node* 	m_ptrNext;
-};
+#include "Node.h"
 
 template <typename T>
 class Stack
@@ -36,13 +30,11 @@ template <typename T>
 Stack<T>::Stack()
 	: m_ptrTop( 0 ), m_ptrBottom( 0 ), m_size( 0 )
 {
-	cout << "\t\tCONSTRUCTOR" << endl;
 }
 
 template <typename T>
 Stack<T>::~Stack()
 {
-	cout << "\t\tDESTRUCTOR" << endl;
 	while ( m_ptrBottom != NULL )
 	{
 		Pop();
@@ -52,8 +44,6 @@ Stack<T>::~Stack()
 template <typename T>
 void Stack<T>::Push( T item )
 {
-	cout << "\t\tPUSH" << endl;
-
 	// Create new node
 	Node<T>* newNode = new Node<T>;
 	newNode->m_data = item;
@@ -78,8 +68,6 @@ void Stack<T>::Push( T item )
 template <typename T>
 void Stack<T>::Pop()
 {
-	cout << "\t\tPOP" << endl;
-
 	if ( m_ptrBottom->m_ptrNext == NULL )
 	{
 		// Only one item in list
@@ -108,8 +96,6 @@ void Stack<T>::Pop()
 template <typename T>
 T Stack<T>::Top()
 {
-	cout << "\t\tTOP" << endl;
-
 	assert ( m_ptrTop != NULL );
 
 	return m_ptrTop->m_data;

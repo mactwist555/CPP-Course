@@ -1,28 +1,22 @@
-#ifndef _STACK
-#define _STACK
+#ifndef _QUEUE
+#define _QUEUE
 
 #include <iostream>
 #include <cassert>
 using namespace std;
 
-template <typename T>
-class Node
-{
-	public:
-	T 		m_data;
-	Node* 	m_ptrNext;
-};
+#include "Node.h"
 
 template <typename T>
-class Stack
+class Queue
 {
 	public:
-	Stack();
-	~Stack();
+	Queue();
+	~Queue();
 
 	void Pop();
 	void Push( T item );
-	T Top();
+	T Front();
 
 	int GetSize();
 
@@ -33,16 +27,14 @@ class Stack
 };
 
 template <typename T>
-Stack<T>::Stack()
+Queue<T>::Queue()
 	: m_ptrTop( 0 ), m_ptrBottom( 0 ), m_size( 0 )
 {
-	cout << "\t\tCONSTRUCTOR" << endl;
 }
 
 template <typename T>
-Stack<T>::~Stack()
+Queue<T>::~Queue()
 {
-	cout << "\t\tDESTRUCTOR" << endl;
 	while ( m_ptrBottom != NULL )
 	{
 		Pop();
@@ -50,10 +42,8 @@ Stack<T>::~Stack()
 }
 
 template <typename T>
-void Stack<T>::Push( T item )
+void Queue<T>::Push( T item )
 {
-	cout << "\t\tPUSH" << endl;
-
 	// Create new node
 	Node<T>* newNode = new Node<T>;
 	newNode->m_data = item;
@@ -61,13 +51,13 @@ void Stack<T>::Push( T item )
 
 	if ( m_ptrBottom == NULL )
 	{
-		// Empty Stack
+		// Empty Queue
 		m_ptrBottom = newNode;
 		m_ptrTop = newNode;
 	}
 	else
 	{
-		// Add item to top of stack
+		// Add item to end of the queue
 		m_ptrTop->m_ptrNext = newNode;
 		m_ptrTop = newNode;
 	}
@@ -76,10 +66,8 @@ void Stack<T>::Push( T item )
 }
 
 template <typename T>
-void Stack<T>::Pop()
+void Queue<T>::Pop()
 {
-	cout << "\t\tPOP" << endl;
-
 	if ( m_ptrBottom->m_ptrNext == NULL )
 	{
 		// Only one item in list
@@ -88,38 +76,30 @@ void Stack<T>::Pop()
 	}
 	else
 	{
-		// Remove the topmost item.
-		// First, we need the 2nd to top item.
-
-		Node<T>* currentNode = m_ptrBottom;
-		while ( currentNode->m_ptrNext != m_ptrTop )
-		{
-			currentNode = currentNode->m_ptrNext;
-		}
-
-		currentNode->m_ptrNext = NULL;
-		delete m_ptrTop;
-		m_ptrTop = currentNode;
+		// Remove the first item
+		// 2nd item now becomes the first.
+		Node<T>* secondNode = m_ptrBottom->m_ptrNext;
+		delete m_ptrBottom;
+		m_ptrBottom = secondNode;
 	}
 
 	m_size--;
 }
 
 template <typename T>
-T Stack<T>::Top()
+T Queue<T>::Front()
 {
-	cout << "\t\tTOP" << endl;
+	assert ( m_ptrBottom != NULL );
 
-	assert ( m_ptrTop != NULL );
-
-	return m_ptrTop->m_data;
+	return m_ptrBottom->m_data;
 }
 
 template <typename T>
-int Stack<T>::GetSize()
+int Queue<T>::GetSize()
 {
 	return m_size;
 }
 
 
 #endif
+
