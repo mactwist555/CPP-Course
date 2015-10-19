@@ -30,3 +30,4 @@ Teaching style/notes...
 * Students should be building their portfolio throughout college - a GitHub is a good idea.
 * Students should be learning to use some form of Version Control.
 * As many resources as needed
+* Students should understand that programming is cheap -- they don't need Visual Studio or even Windows to write C++ code
