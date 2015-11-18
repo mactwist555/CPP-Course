@@ -1,9 +1,0 @@
-<p>Enter a message: </p>
-<p></p>
-<p>Enter a message: </p>
-<p>Testing 1 2 3</p>
-<p>Enter a message: </p>
-<p>how are you?</p>
-<p>Enter a message: </p>
-<p>quit</p>
-<p>Goodbye!</p>
