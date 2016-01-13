@@ -1,5 +1,7 @@
-# CS 201R: Problem Solving and Programming II
+# C++ Course GitHub
 
-## [Class Wiki](https://github.com/Rejcx/CS201R-UMKC/wiki/C-plus-plus-development-software)
+This is a GitHub repository to store sample code and lectures for C++-based courses.
 
-## [Spring 2016 Schedule](https://github.com/Rejcx/CS201R-UMKC/wiki/Spring-2016-Schedule)
+These resources are used for multiple classes, so certain things may or may not be used in your course.
+
+* You can also [view the resources from CS201R, 2013](https://github.com/RachelJMorris/CPP-Course/tree/2013-Summer)
