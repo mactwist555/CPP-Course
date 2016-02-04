@@ -6,6 +6,12 @@ using namespace std;
 
 enum State { MAINMENU, GAME, QUIT };
 
+const char EMPTYROOM = ' ';
+const char MOVE_UP = 'w';
+const char MOVE_DOWN = 's';
+const char MOVE_LEFT = 'a';
+const char MOVE_RIGHT = 'd';
+
 struct Coords
 {
     int x, y;
@@ -20,10 +26,10 @@ void ClearScreen();
 int GetIntInput( int minimum, int maximum );
 string GetStringInput();
 State MainMenu();
-State Gameplay();
+State Gameplay( int& score );
 void GenerateMap( Board& board, Coords& player, Coords& treasure );
 void DrawMap( const Board& board, const Coords& player, const Coords& treasure );
-void DrawHud();
+void DrawHud( int& score );
 void MovePlayer( Coords& player, const Board& board, string direction );
 State YouWin();
 
@@ -31,6 +37,7 @@ int main()
 {
     srand( time( NULL ) );
     State state = MAINMENU;
+    int score = 0;
 
     while ( state != QUIT )
     {
@@ -40,7 +47,7 @@ int main()
         }
         else
         {
-            state = Gameplay();
+            state = Gameplay( score );
         }
     }
 
@@ -82,7 +89,7 @@ State MainMenu()
     }
 }
 
-State Gameplay()
+State Gameplay( int& score )
 {
     bool done = false;
     Board board;
@@ -93,7 +100,7 @@ State Gameplay()
     {
         ClearScreen();
         DrawMap( board, player, treasure );
-        DrawHud();
+        DrawHud( score );
         string choice = GetStringInput();
         MovePlayer( player, board, choice );
 
@@ -104,6 +111,7 @@ State Gameplay()
 
         if ( player.x == treasure.x && player.y == treasure.y )
         {
+            score++;
             return YouWin();
         }
     }
@@ -184,9 +192,9 @@ void GenerateMap( Board& board, Coords& player, Coords& treasure )
     for ( int i = 0; i < roomCount; i++ )
     {
         Coords c;
-        c.x = rand() % 20;
-        c.y = rand() % 10;
-        board.tiles[c.x][c.y] = '.';
+        c.x = rand() % 18 + 1;
+        c.y = rand() % 8 + 1;
+        board.tiles[c.x][c.y] = EMPTYROOM;
         roomCoords.push_back( c );
     }
 
@@ -205,7 +213,7 @@ void GenerateMap( Board& board, Coords& player, Coords& treasure )
 
         while ( x != targetX )
         {
-            board.tiles[x][y] = '.';
+            board.tiles[x][y] = EMPTYROOM;
 
             if ( x < targetX ) { x++; }
             else { x--; }
@@ -213,7 +221,7 @@ void GenerateMap( Board& board, Coords& player, Coords& treasure )
 
         while ( y != targetY )
         {
-            board.tiles[x][y] = '.';
+            board.tiles[x][y] = EMPTYROOM;
 
             if ( y < targetY ) { y++; }
             else { y--; }
@@ -221,10 +229,15 @@ void GenerateMap( Board& board, Coords& player, Coords& treasure )
     }
 }
 
-void DrawHud()
+void DrawHud( int& score )
 {
     cout << endl;
-    cout << "[N]orth, [S]outh, [E]ast, or [W]est, or QUIT to quit." << endl;
+    cout << "Score: " << score << endl << endl;
+    cout << MOVE_UP << ": Move North \t";
+    cout << MOVE_DOWN << ": Move South \t";
+    cout << MOVE_LEFT << ": Move West \t";
+    cout << MOVE_RIGHT << ": Move East" << endl << endl;
+    cout << "Or type QUIT to quit. "<< endl;
 }
 
 void MovePlayer( Coords& player, const Board& board, string direction )
@@ -232,30 +245,30 @@ void MovePlayer( Coords& player, const Board& board, string direction )
     char firstLetter = direction[0];
     firstLetter = tolower( firstLetter );
 
-    if ( firstLetter == 'n' )
+    if ( firstLetter == MOVE_UP )
     {
-        if ( player.y - 1 >= 0 && board.tiles[player.x][player.y - 1] == '.' )
+        if ( player.y - 1 >= 0 && board.tiles[player.x][player.y - 1] == EMPTYROOM )
         {
             player.y--;
         }
     }
-    else if ( firstLetter == 's' )
+    else if ( firstLetter == MOVE_DOWN )
     {
-        if ( player.y + 1 < 10 && board.tiles[player.x][player.y + 1] == '.' )
+        if ( player.y + 1 < 10 && board.tiles[player.x][player.y + 1] == EMPTYROOM )
         {
             player.y++;
         }
     }
-    else if ( firstLetter == 'e' )
+    else if ( firstLetter == MOVE_RIGHT )
     {
-        if ( player.x + 1 < 20 && board.tiles[player.x + 1][player.y] == '.' )
+        if ( player.x + 1 < 20 && board.tiles[player.x + 1][player.y] == EMPTYROOM )
         {
             player.x++;
         }
     }
-    else if ( firstLetter == 'w' )
+    else if ( firstLetter == MOVE_LEFT )
     {
-        if ( player.x - 1 >= 0 && board.tiles[player.x - 1][player.y] == '.' )
+        if ( player.x - 1 >= 0 && board.tiles[player.x - 1][player.y] == EMPTYROOM )
         {
             player.x--;
         }
@@ -268,14 +281,14 @@ State YouWin()
     cout << "YOU WIN!" << endl;
     cout << "You found the treasure!" << endl;
     cout << endl;
-    cout << "Go back to main menu? (y/n): ";
+    cout << "Go to the next level? (y/n): ";
     string input = GetStringInput();
     if ( input == "n" )
     {
-        return QUIT;
+        return MAINMENU;
     }
     else
     {
-        return MAINMENU;
+        return GAME;
     }
 }
