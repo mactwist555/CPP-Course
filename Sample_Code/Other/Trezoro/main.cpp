@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string>
 #include <vector>
+#include <ctime>
 using namespace std;
 
 enum State { MAINMENU, GAME, QUIT };
