@@ -1,81 +1,32 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
-class Fraction
-{
-    public:
-    void Setup( int num, int denom )
-    {
-        numerator = num;
-        denominator = denom;
-    }
-
-    void Display()
-    {
-        cout << "(" << numerator << "/" << denominator << ")";
-    }
-
-    void GetUserInput()
-    {
-        cout << "Enter a numerator & denominator: ";
-        cin >> numerator >> denominator;
-        Display();
-        cout << endl;
-    }
-
-    int GetNumerator()
-    {
-        return numerator;
-    }
-
-    int GetDenominator()
-    {
-        return denominator;
-    }
-
-    void SetNumerator( int value )
-    {
-        numerator = value;
-    }
-
-    void SetDenominator( int value )
-    {
-        denominator = value;
-    }
-
-    private:
-    int numerator, denominator;
-};
+#include "fractionobject.hpp"
 
 Fraction Multiply( Fraction& one, Fraction& two )
 {
     Fraction product;
+
     product.SetNumerator( one.GetNumerator() * two.GetNumerator() );
     product.SetDenominator( one.GetDenominator() * two.GetDenominator() );
+
     return product;
 }
 
 int main()
 {
-    Fraction a, b, product;
+    Fraction fraction1, fraction2, product;
 
-    cout << "Fraction 1" << endl;
-    a.GetUserInput();
+    fraction1.GetUserInput();
+    fraction2.GetUserInput();
+    product = Multiply( fraction1, fraction2 );
 
-    cout << "Fraction 2" << endl;
-    b.GetUserInput();
-
-    product = Multiply( a, b );
-
-    cout << endl;
-    a.Display();
+    fraction1.Display();
     cout << " x ";
-    b.Display();
+    fraction2.Display();
     cout << " = ";
     product.Display();
+    cout << endl;
 
     return 0;
 }
-
-

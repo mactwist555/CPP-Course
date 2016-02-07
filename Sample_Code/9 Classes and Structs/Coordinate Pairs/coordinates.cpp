@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-struct CoordPair
+class CoordPair
 {
     float x, y;
 
