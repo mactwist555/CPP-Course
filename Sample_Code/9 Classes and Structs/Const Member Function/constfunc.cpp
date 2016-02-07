@@ -14,7 +14,6 @@ class Rectangle
     {
         cout << "(" << x << ", " << y << ")\t"
             << width << " x " << height << endl;
-        x = y = 10;
     }
 
     void SetX( int val )        { x = val; }
