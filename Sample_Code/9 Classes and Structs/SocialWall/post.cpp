@@ -1,3 +1,4 @@
+// SOCIAL WALL
 #include "post.hpp"
 
 Post::Post( int id )
