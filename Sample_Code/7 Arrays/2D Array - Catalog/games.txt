@@ -1,0 +1,34 @@
+Action
+    Torchlight
+    Psychonauts
+    RogueLegacy
+    GianaSisters
+    BeyondGoodAndEvil
+
+Adventure
+    MonkeyIsland
+    KingsQuest
+    TheWalkingDead
+    LifeIsStrange
+    Dreamfall
+
+FPS
+    HalfLife
+    Doom
+    Quake
+    DukeNukem
+    UnrealTournament
+
+Puzzle
+    Antichamber
+    Peggle
+    Picross
+    TheWitness
+    Eversion
+
+RPG
+    Fable
+    DragonAge
+    Skyrim
+    SepterraCore
+    LegendOfMana
