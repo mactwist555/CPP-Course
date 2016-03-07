@@ -99,11 +99,7 @@ void CreateBoard( char board[10][5] )
     {
         for ( int x = 0; x < 10; x++ )
         {
-            int r = rand() % 3;
-
-            if      ( r == 0 )  { board[x][y] = '.'; }
-            else if ( r == 1 )  { board[x][y] = '-'; }
-            else if ( r == 2 )  { board[x][y] = '~'; }
+            board[x][y] = '.';
         }
     }
 }
