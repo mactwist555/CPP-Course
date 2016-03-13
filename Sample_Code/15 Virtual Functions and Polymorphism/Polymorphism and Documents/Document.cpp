@@ -11,7 +11,8 @@ void TextDocument::Load( const string& filename )
 
 void TextDocument::Save( const string& filename )
 {
-    cout << "Text document save at " << filename << endl;
+    cout << "Text document save at "
+        << filename << endl;
 
     ofstream output( filename.c_str() );
     output << m_content;

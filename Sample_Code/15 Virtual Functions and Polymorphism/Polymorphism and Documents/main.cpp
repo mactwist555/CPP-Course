@@ -13,8 +13,6 @@ int main()
 
     while ( !done )
     {
-        IDocument* doc = NULL;
-
         cout << endl << endl << "Enter the document name:   ";
         cin >> docname;
         cout << "Enter the file extention:  " << docname << ".";
@@ -22,33 +20,20 @@ int main()
 
         string filename = docname + "." + ext;
 
-        if ( ext == "txt" )
-        {
-            doc = new TextDocument;
-            doc->GetInput();
-            doc->Save( filename );
-        }
-        else if ( ext == "csv" )
-        {
-            doc = new CsvDocument;
-            doc->GetInput();
-            doc->Save( filename );
-        }
-        else if ( ext == "html" )
-        {
-            doc = new WebDocument;
-            doc->GetInput();
-            doc->Save( filename );
-        }
+        IDocument* doc = NULL;
+
+        if ( ext == "txt" )         { doc = new TextDocument; }
+        else if ( ext == "csv" )    { doc = new CsvDocument; }
+        else if ( ext == "html" )   { doc = new WebDocument; }
         else
         {
             cout << "Unknown file type" << endl;
+            continue;
         }
 
-        if ( doc != NULL )
-        {
-            delete doc;
-        }
+        doc->GetInput();
+        doc->Save( filename );
+        delete doc;
     }
 
     return 0;
