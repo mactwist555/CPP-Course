@@ -14,6 +14,7 @@ class Menu
     public:
     static int ShowMenu( const string options[], int size );
     static int GetValidChoice( int min, int max );
+    static void ClearScreen();
 
     private:
 };
@@ -42,6 +43,15 @@ int Menu::GetValidChoice( int min, int max )
     }
 
     return choice;
+}
+
+void Menu::ClearScreen()
+{
+    #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+        system( "cls" );
+    #else
+        system( "clear" );
+    #endif
 }
 
 #endif
