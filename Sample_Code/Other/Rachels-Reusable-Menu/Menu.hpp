@@ -7,6 +7,7 @@ class object.
 #define _MENU
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 class MenuOption
@@ -43,6 +44,9 @@ class Menu
     static int GetValidChoice( const string& message, int min, int max );
     static void ClearScreen();
     static void DrawHorizontalBar( int width, char symbol = '-' );
+
+    static string IntToString( int num );
+    static int StringToInt( const string& str );
 
     private:
 };
@@ -147,4 +151,15 @@ void Menu::ClearScreen()
     #endif
 }
 
+string Menu::IntToString( int num )
+{
+    return to_string( num );
+}
+
+int Menu::StringToInt( const string& str )
+{
+    return stoi( str );
+}
+
 #endif
+
