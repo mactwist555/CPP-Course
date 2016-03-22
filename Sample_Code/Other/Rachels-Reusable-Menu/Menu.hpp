@@ -1,54 +1,34 @@
-/*
-Rachel's special "I'M TIRED OF WRITING MENUS"
-class object.
-*/
+/* Rachel's Menu Object. Since these are static functions, you won't create a Menu object */
+/* Call things like: */
+/* Menu::ShowMenu( options, 3 ); */
 
 #ifndef _MENU
 #define _MENU
 
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
-
-class MenuOption
-{
-    public:
-    MenuOption() { }
-
-    MenuOption( const string& k, const string& v )
-    {
-        Setup( k, v );
-    }
-
-    void Setup( const string& k, const string& v )
-    {
-        key = k;
-        value = v;
-    }
-
-    string key;
-    string value;
-};
 
 class Menu
 {
     public:
-    static void Header( const string& header );
-    static void ShowMenu( const string options[], int size );
-    static void ShowMenu( const MenuOption options[], int size );
-    static void ShowMenu( const vector<MenuOption> options );
-    static int ShowMenuWithPrompt( const string options[], int size );
-    static int ShowMenuWithPrompt( const MenuOption options[], int size );
-    static int ShowMenuWithPrompt( const vector<MenuOption> );
-    static int GetValidChoice( int min, int max );
-    static int GetValidChoice( const string& message, int min, int max );
+    // OUTPUT
     static void ClearScreen();
+    static void Header( const string& header );
     static void DrawHorizontalBar( int width, char symbol = '-' );
 
+    // MENUS and INPUT/OUTPUT
+    static void ShowMenu( const vector<string> options, bool vertical = true );
+    static int ShowMenuWithPrompt( const vector<string> options, bool vertical = true );
+
+    static int GetValidChoice( int min, int max, const string& message = "" );
+    static string GetValidStringChoice( const vector<string> options, bool caseSensitive = false );
+
+    // UTILITIES
     static string IntToString( int num );
     static int StringToInt( const string& str );
-
-    private:
+    static string ToUpper( const string& val );
 };
 
 void Menu::DrawHorizontalBar( int width, char symbol )
@@ -69,57 +49,33 @@ void Menu::Header( const string& header )
     cout << endl;
 }
 
-void Menu::ShowMenu( const string options[], int size )
+void Menu::ShowMenu( const vector<string> options, bool vertical )
 {
-    for ( int i = 0; i < size; i++ )
+    if ( vertical )
     {
-        cout << " " << (i+1) << ".\t" << options[i] << endl;
+        for ( unsigned int i = 0; i < options.size(); i++ )
+        {
+            cout << " " << (i+1) << ".\t" << options[i] << endl;
+        }
+    }
+    else
+    {
+        for ( unsigned int i = 0; i < options.size(); i++ )
+        {
+            cout << " " << (i+1) << ". " << options[i] << "\t";
+        }
+        cout << endl;
     }
 }
 
-void Menu::ShowMenu( const MenuOption options[], int size )
+int Menu::ShowMenuWithPrompt( const vector<string> options, bool vertical )
 {
-    for ( int i = 0; i < size; i++ )
-    {
-        cout << " " << (i+1) << ".\t" << options[i].value << endl;
-    }
-}
-
-void Menu::ShowMenu( const vector<MenuOption> options )
-{
-    for ( int i = 0; i < options.size(); i++ )
-    {
-        cout << " " << (i+1) << ".\t" << options[i].value << endl;
-    }
-}
-
-int Menu::ShowMenuWithPrompt( const string options[], int size )
-{
-    ShowMenu( options, size );
-    int choice = GetValidChoice( 1, size );
-    return choice - 1;
-}
-
-int Menu::ShowMenuWithPrompt( const MenuOption options[], int size )
-{
-    ShowMenu( options, size );
-    int choice = GetValidChoice( 1, size );
-    return choice - 1;
-}
-
-int Menu::ShowMenuWithPrompt( const vector<MenuOption> options )
-{
-    ShowMenu( options );
+    ShowMenu( options, vertical );
     int choice = GetValidChoice( 1, options.size() );
-    return choice - 1;
+    return choice;
 }
 
-int Menu::GetValidChoice( int min, int max )
-{
-    return GetValidChoice( "", min, max );
-}
-
-int Menu::GetValidChoice( const string& message, int min, int max )
+int Menu::GetValidChoice( int min, int max, const string& message )
 {
     if ( message != "" )
     {
@@ -142,6 +98,39 @@ int Menu::GetValidChoice( const string& message, int min, int max )
     return choice;
 }
 
+string Menu::GetValidStringChoice( const vector<string> options, bool caseSensitive )
+{
+    cout << " Options: ";
+    for ( int i = 0; i < options.size(); i++ )
+    {
+        cout << " [" << options[i] << "]";
+    }
+
+    string choice;
+    cout << endl << " >> ";
+    cin >> choice;
+
+    while ( true )
+    {
+        for ( int i = 0; i < options.size(); i++ )
+        {
+            string option = options[i];
+            if ( !caseSensitive )
+            {
+                choice = Menu::ToUpper( choice );
+                option = Menu::ToUpper( option );
+            }
+
+            if ( choice == option )
+            {
+                return choice;
+            }
+        }
+
+        cout << " Invalid input. Try again." << endl;
+    }
+}
+
 void Menu::ClearScreen()
 {
     #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
@@ -159,6 +148,16 @@ string Menu::IntToString( int num )
 int Menu::StringToInt( const string& str )
 {
     return stoi( str );
+}
+
+string Menu::ToUpper( const string& val )
+{
+    string upper = "";
+    for ( unsigned int i = 0; i < val.size(); i++ )
+    {
+        upper += toupper( val[i] );
+    }
+    return upper;
 }
 
 #endif
