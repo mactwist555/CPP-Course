@@ -13,7 +13,8 @@ int main()
     cout << "ORIGINAL LIST:" << endl;
     DisplayList( letters, size );
 
-    InsertionSort_Verbose( letters, size );
+//    InsertionSort_Iterative( letters, size );
+    InsertionSort_Iterative_Verbose( letters, size );
 
     cout << "SORTED LIST:" << endl;
     DisplayList( letters, size );
