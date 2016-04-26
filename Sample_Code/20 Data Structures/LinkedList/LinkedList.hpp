@@ -104,6 +104,7 @@ class LinkedList
             Node<T>* penultimate = ptrEnd->ptrPrev;
             delete ptrEnd;
             ptrEnd = penultimate;
+            ptrEnd->ptrNext = NULL;
             m_size--;
         }
     }
@@ -127,6 +128,7 @@ class LinkedList
             Node<T>* next = ptrFront->ptrNext;
             delete ptrFront;
             ptrFront = next;
+            ptrFront->ptrPrev = NULL;
             m_size--;
         }
     }
